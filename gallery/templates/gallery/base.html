@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Galeria zdjęć KMP</title>
+        <title>Title</title>
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'gallery/css/bootstrap.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'gallery/css/lightbox.min.css' %}" />
@@ -20,7 +20,7 @@
 							<h3>Kategorie</h3>
 							    <ul>
 							    	{%if request.get_full_path != "/" %}
-							    		<li><a href="/">Ostatnio dodane</a></li>
+							    		<li><a href="/">Last added</a></li>
 							    	{% endif %}
 								{% for category in categories %}
 								  	<li><a href="/album/{{category.id}}">{{category.name}}</a></li>
@@ -37,15 +37,5 @@
                 </div>
             </div>
         </div>
-	<!-- GoStats JavaScript Based Code -->
-	<script type="text/javascript" src="http://gostats.pl/js/counter.js"></script>
-	<script type="text/javascript">_gos='monster.gostats.pl';_goa=494153;
-	_got=5;_goi=1;_gol='darmowy licznik';_GoStatsRun();</script>
-	<noscript><a target="_blank" title="darmowy licznik" 
-	href="http://gostats.pl"><img alt="darmowy licznik" 
-	src="http://monster.gostats.pl/bin/count/a_494153/t_5/i_1/counter.png" 
-	style="border-width:0" /></a></noscript>
-	<!-- End GoStats JavaScript Based Code -->
-        <script src="{% static 'gallery/js/lightbox-plus-jquery.min.js' %}"></script>
     </body>
 </html>

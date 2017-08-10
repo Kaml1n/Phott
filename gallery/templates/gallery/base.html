@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Galeria zdjęć KMP</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'gallery/css/bootstrap.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'gallery/css/lightbox.min.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'gallery/css/css.css' %}" />
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+  					<div id="const">
+	  					<h1>
+	  						<a href="/">Kamil Mirończuk Photography</a>
+	  					</h1>
+						<div id="menu">
+							<h3>Kategorie</h3>
+							    <ul>
+							    	{%if request.get_full_path != "/" %}
+							    		<li><a href="/">Ostatnio dodane</a></li>
+							    	{% endif %}
+								{% for category in categories %}
+								  	<li><a href="/album/{{category.id}}">{{category.name}}</a></li>
+								{% endfor %}
+							    </ul>
+						</div>
+	                   			<div id="footer">
+  							Kontakt:
+  							<a href="https://facebook.com/KKamilM">Facebook</a> |
+  						 	<a href="https://stackoverflow.com/users/8289710/kaml1n">Stackoverflow</a>
+  						</div>
+  					</div>
+                </div>
+                <div class="col-md-9 thumblist">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+	<!-- GoStats JavaScript Based Code -->
+	<script type="text/javascript" src="http://gostats.pl/js/counter.js"></script>
+	<script type="text/javascript">_gos='monster.gostats.pl';_goa=494153;
+	_got=5;_goi=1;_gol='darmowy licznik';_GoStatsRun();</script>
+	<noscript><a target="_blank" title="darmowy licznik" 
+	href="http://gostats.pl"><img alt="darmowy licznik" 
+	src="http://monster.gostats.pl/bin/count/a_494153/t_5/i_1/counter.png" 
+	style="border-width:0" /></a></noscript>
+	<!-- End GoStats JavaScript Based Code -->
+        <script src="{% static 'gallery/js/lightbox-plus-jquery.min.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,123 @@
+.thumblist {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.thumblist li {
+	float: left;
+	height: 50%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.thumblist img {
+    display: inline-block;
+    min-width: 100%;
+    min-height: 100%;
+    -ms-interpolation-mode: bicubic; /* Better image scaling in IE */
+}
+
+.col-md-4 , .col-md-3{
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+h1{
+	font-size: 4em;
+	font-weight: 500;
+	padding: 0px 10px;
+}
+
+h3{
+	font-size: 2em;
+}
+
+p {
+    clear: both
+}
+
+ul, li {
+	padding: 0px;
+}
+
+ul {
+	margin:20px;
+}
+
+li {
+	font-size: 1.3em;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: #2e3436;
+}
+
+li a:hover,li  a:active {
+    color: #babdb6;
+}
+
+ul {
+	list-style-type: none;
+}
+
+#const h1 {
+	font-family: 'Dancing Script', cursive;
+}
+
+
+#const, #footer {
+	text-align: center;
+}
+
+.lb-image, .lightbox{
+	width: auto !important;
+}
+
+.lb-image, .lb-outerContainer, .lightbox{
+	max-height: 90vh !important;
+	position: absolute; 
+	left: 0; 
+	right: 0; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+.lb-outerContainer{
+	background-color: transparent;
+}
+
+@media screen and (min-width: 992px) {
+	#footer {
+		position: absolute;
+		bottom: 20px;
+		width: 100%;
+	}
+	
+	#const {
+		height: 100vh;
+		position: fixed;
+		width: 25%;
+		padding: 0px 10px;
+	}
+
+	#menu {
+		margin: 50px 0px;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	#const {
+		top: 0px;
+		height: auto;
+	}
+	
+	#footer {
+		padding: 20px;
+	}
+
+	#menu {
+		margin: 20px 0px;
+	}
+}
